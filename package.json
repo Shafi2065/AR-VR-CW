@@ -1,0 +1,23 @@
+{
+  "name": "ar-vr-cw",
+  "version": "1.0.0",
+  "description": "Group coursework for AR/VR module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shafi2065/AR-VR-CW.git"
+  },
+  "author": "Quantum Realms",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shafi2065/AR-VR-CW/issues"
+  },
+  "homepage": "https://github.com/Shafi2065/AR-VR-CW#readme",
+  "devDependencies": {
+    "electron": "^30.0.1"
+  }
+}
