@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <!-- As if this Glitch were a typical HTML CodePen... -->    
+    <!-- As if this Glitch were a typical HTML CodePen... -->
     <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
-    
+
     <!-- Use components defined in separate files. -->
     <script src="arrow-key-rotation.js"></script>
     <script src="play-on-vrdisplayactivate-or-enter-vr.js"></script>
 
+    <script>
+        var videos = [
+          './libraryvid.MP4',
+          './Lsbu Hub.mp4',
+          './K2 & Keyworth.mp4',
+          "./Perry Building.mp4",
+          './Lecture Theatre.mp4',
+      ];
+        var currentVideoIndex = 0;
+
+        function nextScene() {
+          // Increment the index to get the next video
+          currentVideoIndex++;
+
+          // Wrap around to the beginning if we reach the end of the array
+          if (currentVideoIndex >= videos.length) {
+            currentVideoIndex = 0;
+          }
+          videosphere.setAttribute('src', videos[currentVideoIndex]);
+          console.log("Next scene: " + videos[currentVideoIndex]);
+        }
+        function previousScene() {
+          currentVideoIndex--;
+          if (currentVideoIndex < 0) {
+            currentVideoIndex = videos.length - 1;
+          }
+          videosphere.setAttribute('src', videos[currentVideoIndex]);
+          console.log("Previous scene: " + videos[currentVideoIndex]);
+        }
+    </script>
     <!-- Specify our scene. -->
     <a-scene>
       <!-- The original example also has this 180 degree rotation, to appear to be going forward. -->
-      <a-videosphere rotation="0 180 0" src="./Libraryvid.MP4" 
-                     play-on-vrdisplayactivate-or-enter-vr>
-      </a-videosphere>  
-      <!-- Wait for the video to load. -->
+      <a-videosphere
+        rotation="0 180 0"
+        src="./libraryvid.MP4"
+        play-on-vrdisplayactivate-or-enter-vr
+      >
+      </a-videosphere>
+      <!-- Add a camera with movement controls -->
+      <a-camera wasd-controls-enabled="true"></a-camera>
     </a-scene>
   </body>
 </html>
