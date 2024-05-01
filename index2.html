@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html class="a-fullscreen" foxified>
+<head>  
+    <script src="aframe.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.2.0/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <video id="K2" src="K2 & Keyworth.mp4"></video>
+            <video id="Lecture" src="Lecture Theatre.mp4"></video>
+            <video id="LSBUHubStill" src="libraryvid.mp4"></video>
+            <video id="LSBUHubMoving" src="Lsbu Hub.mp4"></video>
+            <video id="Perry" src="Perry Building.mp4"></video>
+        </a-assets>
+
+        <!-- Scene entities -->
+        <a-entity id="scene1" position="0 -1 0" visible="true" scale="1 1 1">
+            <a-sky src="#LSBUHubStill"></a-sky>    
+            <a-box color="green" position="-1 1 -3" scale="1 1 1" onclick="homepage()"></a-box>
+            <!-- sun -->
+            <a-sphere color="yellow" position="100 120 150" scale="10 10 10" onclick="homepage()"></a-sphere>
+        </a-entity>
+
+        <a-entity id="scene2" position="0 -1 0" visible="false" scale="1 1 1">
+            <a-sky src="#LSBUHubMoving"></a-sky>    
+            <a-box color="yellow" position="-1 1 -3" scale="1 1 1" onclick="homepage()"></a-box>
+        </a-entity>
+
+        <a-entity id="scene3" position="0 -1 0" visible="false" scale="1 1 1">
+            <a-sky src="#K2"></a-sky>    
+            <a-box color="red" position="-5 1 -2" scale="1 1 1" onclick="homepage()"></a-box>
+        </a-entity>
+
+        <a-entity id="scene4" position="0 -1 0" visible="false" scale="1 1 1">
+            <a-sky src="#Perry"></a-sky>    
+            <a-box color="blue" position="-5 1 -2" scale="1 1 1" onclick="homepage()"></a-box>
+        </a-entity>
+
+        <a-entity id="scene5" position="0 -1 0" visible="false" scale="1 1 1">
+            <a-sky src="#Lecture"></a-sky>    
+            <a-box color="pink" position="-5 1 -2" scale="1 1 1" onclick="homepage()"></a-box>
+        </a-entity>
+
+        <a-camera position="0 2 11" >
+            <a-cursor color="red"></a-cursor>
+        </a-camera>
+    </a-scene>
+
+    <!-- SCENE SWITCH SCRIPT -->
+    <script type="text/javascript">
+        function scene1() { // hub moving
+            document.getElementById('scene1').setAttribute('visible', 'true');
+            document.getElementById('scene2').setAttribute('visible', 'false'); 
+            document.getElementById('scene3').setAttribute('visible', 'false');
+            document.getElementById('scene4').setAttribute('visible', 'false'); 
+            document.getElementById('scene5').setAttribute('visible', 'false');
+        }
+
+        function scene2() { // hub still
+            document.getElementById('scene1').setAttribute('visible', 'false');
+            document.getElementById('scene2').setAttribute('visible', 'true'); 
+            document.getElementById('scene3').setAttribute('visible', 'false'); 
+            document.getElementById('scene4').setAttribute('visible', 'false'); 
+            document.getElementById('scene5').setAttribute('visible', 'false');
+        }
+
+        function scene3() { // k2
+            document.getElementById('scene1').setAttribute('visible', 'false');
+            document.getElementById('scene2').setAttribute('visible', 'false'); 
+            document.getElementById('scene3').setAttribute('visible', 'true'); 
+            document.getElementById('scene4').setAttribute('visible', 'false');  
+            document.getElementById('scene5').setAttribute('visible', 'false');
+        }
+
+        function scene4() { // perry
+            document.getElementById('scene1').setAttribute('visible', 'false');
+            document.getElementById('scene2').setAttribute('visible', 'false'); 
+            document.getElementById('scene3').setAttribute('visible', 'false'); 
+            document.getElementById('scene4').setAttribute('visible', 'true');  
+            document.getElementById('scene5').setAttribute('visible', 'false');
+        }
+        
+        function scene5() { // lecture
+            document.getElementById('scene1').setAttribute('visible', 'false');
+            document.getElementById('scene2').setAttribute('visible', 'false'); 
+            document.getElementById('scene3').setAttribute('visible', 'false'); 
+            document.getElementById('scene4').setAttribute('visible', 'false'); 
+            document.getElementById('scene5').setAttribute('visible', 'true'); 
+        }
+    </script>
+</body>
+</html>
