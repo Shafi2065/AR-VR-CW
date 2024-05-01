@@ -1,3 +1,5 @@
+<!-- correct version  -->
+
 <!DOCTYPE html>
 <html class="a-fullscreen" foxified>
 <head>  
@@ -17,30 +19,43 @@
 
         <!-- Scene entities -->
         <a-entity id="scene1" position="0 -1 0" visible="true" scale="1 1 1">
-            <a-sky src="#LSBUHubStill"></a-sky>    
-            <a-box color="green" position="-1 1 -3" scale="1 1 1" onclick="homepage()"></a-box>
-            <!-- sun -->
-            <a-sphere color="yellow" position="100 120 150" scale="10 10 10" onclick="homepage()"></a-sphere>
+            <a-sky src="#LSBUHubMoving"></a-sky>    
+            <a-box color="yellow" position="-1 1 -3" scale="1 1 1" onclick="scene2()"></a-box>
         </a-entity>
 
         <a-entity id="scene2" position="0 -1 0" visible="false" scale="1 1 1">
-            <a-sky src="#LSBUHubMoving"></a-sky>    
-            <a-box color="yellow" position="-1 1 -3" scale="1 1 1" onclick="homepage()"></a-box>
+            <a-sky src="#LSBUHubStill"></a-sky>    
+            <a-box color="green" position="-1 1 -3" scale="1 1 1" onclick="scene3()"></a-box>
+            <!-- sun -->
+            <a-sphere color="yellow" position="100 120 150" scale="10 10 10" onclick="scene3()"></a-sphere>
         </a-entity>
 
         <a-entity id="scene3" position="0 -1 0" visible="false" scale="1 1 1">
             <a-sky src="#K2"></a-sky>    
-            <a-box color="red" position="-5 1 -2" scale="1 1 1" onclick="homepage()"></a-box>
+            <a-box color="red" position="-5 1 -2" scale="1 1 1" onclick="scene4()"></a-box>
         </a-entity>
 
         <a-entity id="scene4" position="0 -1 0" visible="false" scale="1 1 1">
             <a-sky src="#Perry"></a-sky>    
-            <a-box color="blue" position="-5 1 -2" scale="1 1 1" onclick="homepage()"></a-box>
+            <a-box color="blue" position="-5 1 -2" scale="1 1 1" onclick="scene5()"></a-box>
         </a-entity>
 
         <a-entity id="scene5" position="0 -1 0" visible="false" scale="1 1 1">
             <a-sky src="#Lecture"></a-sky>    
-            <a-box color="pink" position="-5 1 -2" scale="1 1 1" onclick="homepage()"></a-box>
+            <a-box color="pink" position="-5 1 -2" scale="1 1 1" onclick="scene6()"></a-box>
+        </a-entity>
+
+        <a-entity id="scene6" position="0 -1 0" visible="false" scale="1 1 1">
+            <a-entity camera look-controls wasd-controls position="0 2 5"></a-entity>
+            <a-plane position="0 0 10" rotation="90 0 0" width="10" height="40" color="#FF2E5E" material="side: double"></a-plane>
+        
+            <a-cylinder position="-3 2 0" radius="0.2" height="3" color="#FFC65D"></a-cylinder>
+            <a-cylinder position="3 2 0" radius="0.2" height="3" color="#FFC65D"></a-cylinder>
+        
+            <a-plane position="0 2.5 3" rotation="0 0 0" width="3" height="0.5" color="#EF2D5E">
+                <a-text value="Thats all for now!" align="center" position="0 0 0.1" color="white" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
+            </a-plane>
+        
         </a-entity>
 
         <a-camera position="0 2 11" >
